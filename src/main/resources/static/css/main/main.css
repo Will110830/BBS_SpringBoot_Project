@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f8fa;
+  color: #14171a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 헤더 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #e1e8ed;
+  background-color: #ffffff;
+}
+
+.logo {
+  height: 40px;
+  cursor: pointer;
+}
+
+.mypage-btn, .login-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #e6ecf0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-btn {
+  border-radius: 18px;
+  padding: 0 10px;
+  font-weight: bold;
+  background-color: #1da1f2;
+  color: white;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* 게시판 섹션 */
+.boards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.board {
+  flex: 1 1 calc(33.333% - 1rem);
+  min-width: 250px;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.board:hover {
+  transform: translateY(-2px);
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.board-header h3 {
+  color: #FFD000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.see-more {
+  font-size: 0.9rem;
+  color: #888;
+  text-decoration: none;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li a {
+  display: block;
+  padding: 0.4rem 0;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+.post-list li:last-child a {
+  border-bottom: none;
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .board {
+    flex: 1 1 100%;
+  }
+}
+
+/* 하단 네비게이션 */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #ffffff;
+  border-top: 1px solid #e1e8ed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-icon {
+  font-size: 22px;
+  color: #657786;
+  text-decoration: none;
+}

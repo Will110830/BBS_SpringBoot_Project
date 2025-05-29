@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>책고르미 - 시작하기</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+<div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" alt="logo" class="logo">
+    <div class="subtitle">JUST PICK UP!</div>
+    <ul class="social-list">
+        <li>
+            <button class="kakao-btn social-btn">
+                <img src="" alt="Kakao">카카오 계정으로 시작하기
+            </button>
+        </li>
+        <li>
+            <button class="naver-btn social-btn">
+                <img src="" alt="Naver">네이버 계정으로 시작하기
+            </button>
+        </li>
+    </ul>
+    <div class="or">또는</div>
+    <button class="main-btn" th:onclick="|location.href='@{/member/join}'|">계정 만들기</button>
+    <p class="login-text">이미 책고르미에 가입하셨나요?</p>
+    <button class="login-btn" th:onclick="|location.href='@{/login}'|">로그인</button>
+</div>
+</body>
+</html>
