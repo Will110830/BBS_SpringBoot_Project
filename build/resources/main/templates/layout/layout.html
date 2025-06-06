@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">My App</title>
+  <link rel="stylesheet" th:href="@{/css/main/main.css}">
+  <link rel="stylesheet" th:href="@{/css/common.css}">
+</head>
+<body>
+
+<!-- 공통 헤더 -->
+<header class="header">
+  <div></div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+       alt="logo"
+       class="logo"
+       onclick="location.href='/team'" />
+
+  <div th:if="${loginMember != null}" class="mypage-btn" onclick="location.href='/mypage'">
+    <i class="fas fa-user"></i>
+  </div>
+  <div th:if="${loginMember == null}" class="login-btn" onclick="location.href='/login'">
+    로그인
+  </div>
+</header>
+
+<!-- 페이지별 콘텐츠가 들어올 부분 -->
+<main layout:fragment="content" class="content"></main>
+
+<!-- 공통 하단 네비게이션 -->
+<nav class="bottom-nav">
+  <a href="/main" class="nav-icon"><i class="fas fa-home"></i></a>
+  <a href="#" class="nav-icon"><i class="fas fa-compass"></i></a>
+  <a href="#" class="nav-icon"><i class="fas fa-calendar-alt"></i></a>
+  <a href="#" class="nav-icon"><i class="fas fa-search"></i></a>
+</nav>
+
+</body>
+</html>

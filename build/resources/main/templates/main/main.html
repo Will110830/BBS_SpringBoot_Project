@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title>Main</title>
+</head>
+<body>
+<!-- 콘텐츠 -->
+<main layout:fragment="content">
+
+<!--  &lt;!&ndash; 독서 정보 &ndash;&gt;-->
+<!--  <section class="reading-section">-->
+<!--    <p><strong th:text="${loginMember.name}"></strong>님이 현재 읽고 있는 책</p>-->
+<!--    <div class="reading-info">-->
+<!--      <img th:src="${loginMember.bookCoverUrl}" alt="책 표지" />-->
+<!--      <div>-->
+<!--        <p th:text="${loginMember.readingTime}">nn시간 nn분째 읽고 있는 중</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+
+  <!-- 게시판 -->
+  <section class="boards">
+    <div class="board" onclick="location.href='/board?type=notice'">
+      <h3>공지사항</h3>
+      <ul>
+        <li th:each="post : ${noticePosts}" th:text="${post.title}"></li>
+      </ul>
+    </div>
+
+    <div class="board" onclick="location.href='/board?type=review'">
+      <h3>리뷰게시판</h3>
+      <ul>
+        <li th:each="post : ${reviewPosts}" th:text="${post.title}"></li>
+      </ul>
+    </div>
+
+    <div class="board" onclick="location.href='/board?type=suggestion'">
+      <h3>건의사항</h3>
+      <ul>
+        <li th:each="post : ${suggestionPosts}" th:text="${post.title}"></li>
+      </ul>
+    </div>
+  </section>
+</main>
+</body>
+</html>
